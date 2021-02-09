@@ -13,6 +13,8 @@ import io.flutter.plugin.common.BinaryMessenger
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.platform.PlatformView
+import android.graphics.Bitmap
+import com.tencent.smtt.sdk.ValueCallback
 
 
 @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
