@@ -93,14 +93,6 @@ class X5WebView(private val context: Context, private val id: Int, private val p
                     channel.invokeMethod("onHideCustomView", null)
                 }
 
-                override fun onReceivedTitle(p0: WebView, p1: String){
-                    super.onReceivedTitle(p0,p1);
-                    //向flutter通信
-                    val arg = hashMapOf<String, Any>()
-                    arg["title"] = p1
-                    channel.invokeMethod("onReceivedTitle", arg)
-                }
-
                 override fun onProgressChanged(p0: WebView?, p1: Int) {
                     super.onProgressChanged(p0, p1)
                     //加载进度
