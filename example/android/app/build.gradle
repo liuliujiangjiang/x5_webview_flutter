@@ -45,7 +45,7 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.cjx.x5_webview_example"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode 24
         versionName "0.2.4"
@@ -53,20 +53,20 @@ android {
     }
 
     signingConfigs {
-        release {
-            keyAlias keystoreProperties['keyAlias']
-            keyPassword keystoreProperties['keyPassword']
-            storeFile file(keystoreProperties['storeFile'])
-            storePassword keystoreProperties['storePassword']
-        }
+//        release {
+//            keyAlias keystoreProperties['keyAlias']
+//            keyPassword keystoreProperties['keyPassword']
+//            storeFile file(keystoreProperties['storeFile'])
+//            storePassword keystoreProperties['storePassword']
+//        }
     }
     buildTypes {
-        release {
-            signingConfig signingConfigs.release
-        }
-        debug{
-            signingConfig signingConfigs.debug
-        }
+//        release {
+//            signingConfig signingConfigs.release
+//        }
+//        debug{
+//            signingConfig signingConfigs.debug
+//        }
     }
 }
 

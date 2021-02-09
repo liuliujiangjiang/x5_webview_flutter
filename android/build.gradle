@@ -47,6 +47,10 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
+    compileOptions {
+        targetCompatibility kotlin_version
+        sourceCompatibility kotlin_version
+    }
 }
 
 dependencies {

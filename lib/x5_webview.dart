@@ -11,6 +11,7 @@ typedef void PageFinishedCallback();
 typedef void ShowCustomViewCallback();
 typedef void HideCustomViewCallback();
 typedef void ProgressChangedCallback(int progress);
+typedef void OnReceivedTitle(String title);
 typedef void MessageReceived(String name, String data);
 typedef void UrlLoading(String url);
 
@@ -21,6 +22,7 @@ class X5WebView extends StatefulWidget {
   final ShowCustomViewCallback onShowCustomView;
   final HideCustomViewCallback onHideCustomView;
   final ProgressChangedCallback onProgressChanged;
+  final OnReceivedTitle onReceivedTitle;
   final bool javaScriptEnabled;
   final JavascriptChannels javascriptChannels;
   final UrlLoading onUrlLoading;
@@ -37,6 +39,7 @@ class X5WebView extends StatefulWidget {
       this.onHideCustomView,
       this.javascriptChannels,
       this.onProgressChanged,
+      this.onReceivedTitle,
       this.onUrlLoading,
       this.header,
       this.userAgentString})
@@ -213,6 +216,12 @@ class X5WebViewController {
         if (_widget.onProgressChanged != null) {
           Map arg = call.arguments;
           _widget.onProgressChanged(arg["progress"]);
+        }
+        break;
+      case "onReceivedTitle":
+        if (_widget.onReceivedTitle != null) {
+          Map arg = call.arguments;
+          _widget.onReceivedTitle(arg["title"]);
         }
         break;
       case "onUrlLoading":
