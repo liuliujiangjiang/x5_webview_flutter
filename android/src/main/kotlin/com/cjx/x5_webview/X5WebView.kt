@@ -93,7 +93,7 @@ class X5WebView(private val context: Context, private val id: Int, private val p
                     channel.invokeMethod("onHideCustomView", null)
                 }
 
-                override fun onReceivedTitle(p0: WebView?, p1: String){
+                override fun onReceivedTitle(p0: WebView, p1: String){
                     super.onReceivedTitle(p0,p1);
                     //向flutter通信
                     val arg = hashMapOf<String, Any>()
